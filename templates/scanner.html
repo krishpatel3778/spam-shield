@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Email Scanner — SpamShield AI{% endblock %}
+{% block content %}
+<section class="page-intro reveal"><span class="eyebrow"><span class="eyebrow-dot"></span> AI-ASSISTED CHECK</span><h1>Take a closer look<br><span class="gradient-text">at that email.</span></h1><p>Paste the message text below to check for patterns commonly found in spam. Avoid including private information.</p></section>
+<section class="scanner-layout reveal">
+  <div class="scanner-panel">
+    <div class="panel-heading"><div><span class="step-label">01 / MESSAGE</span><h2>Paste your email</h2></div><span class="secure-label">▣ Local app scan</span></div>
+    <label class="field-label" for="emailText">Email or message content</label>
+    <textarea id="emailText" maxlength="20000" placeholder="Paste the email text here…&#10;&#10;Tip: include the subject line and message body for a more useful check."></textarea>
+    <div class="textarea-meta"><span>Do not include passwords, OTPs or sensitive personal details.</span><span id="charCount">0 / 20000</span></div>
+    <div class="scanner-actions"><button class="btn btn-primary" id="scanButton">Analyse message <span>↗</span></button><button class="btn btn-secondary" id="clearButton" type="button">Clear text</button></div>
+    <div class="scan-status" id="scanStatus" role="status" aria-live="polite"></div>
+    <div class="scan-result hidden" id="scanResult">
+      <div class="result-hero">
+        <div class="result-symbol" id="resultSymbol">!</div>
+        <div class="result-heading"><span class="step-label">CLASSIFICATION RESULT</span><h2 id="resultTitle">Analysis complete</h2><p id="resultMessage"></p></div>
+        <div class="risk-score-box"><span>RISK INDICATOR</span><strong id="riskValue">—</strong><small id="riskLevel">—</small></div>
+      </div>
+      <div class="risk-track result-risk-track"><span id="riskBar"></span></div>
+      <div class="result-meta-grid">
+        <div><span>MODEL</span><strong id="modelName">TF-IDF + Linear SVM</strong></div><div><span>CLASS</span><strong id="resultClass">—</strong></div><div><span>STATUS</span><strong id="resultStatus">—</strong></div><div><span>LINKS FOUND</span><strong id="urlCount">0</strong></div>
+      </div>
+      <div class="result-section-title"><span class="eyebrow-dot"></span><span>SECURITY INSIGHTS</span></div>
+      <h3 class="result-subtitle">Why did the model give this result?</h3>
+      <div id="analysisList" class="insight-grid"></div>
+      <div class="result-guidance-grid">
+        <section class="guidance-box recommended"><span class="eyebrow-dot"></span><h3>RECOMMENDED ACTION</h3><p id="recommendedAction"></p></section>
+        <section class="guidance-box interacted"><span class="eyebrow-dot"></span><h3>IF YOU ALREADY INTERACTED</h3><p id="ifInteracted"></p></section>
+      </div>
+      <div class="model-signals"><span>MODEL SIGNALS</span><p id="modelSignals">—</p></div>
+      <div class="result-footnote" id="riskNote"></div><div class="result-privacy" id="privacyNote"></div>
+    </div>
+  </div>
+  <aside class="scanner-aside">
+    <div class="aside-illustration"><div class="aside-orbit"></div><div class="mail-art"><span>✉</span><i>✓</i></div><div class="aside-spark">✦</div></div>
+    <h3>Before you scan</h3><ul class="check-list"><li><span>✓</span> Remove private information</li><li><span>✓</span> Include the message text</li><li><span>✓</span> Treat unexpected links carefully</li></ul>
+    <div class="aside-tip"><strong>Remember</strong><p>Do not click a suspicious link just to test it. Visit known official websites yourself.</p></div>
+    <a class="text-link" href="{{ url_for('safety') }}">Learn warning signs <span>→</span></a>
+  </aside>
+</section>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/scanner.js') }}"></script>{% endblock %}

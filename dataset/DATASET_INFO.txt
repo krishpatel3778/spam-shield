@@ -1,0 +1,9 @@
+SpamShield AI training corpus
+
+Sources supplied by the user: SpamAssassin-style archives named 20030228_spam, 20030228_hard_ham, and 20030228_easy_ham_2. The extra uploaded .bz2 archive was a duplicate of easy_ham_2 and was not counted twice.
+Unique parsed messages: 2118
+Label counts: {'spam': 479, 'safe': 1639}
+Counts by archive after text extraction/deduplication: {'20030228_spam.tar.bz2': 479, '20030228_hard_ham.tar.bz2': 249, '20030228_easy_ham_2.tar.bz2': 1390}
+
+Labels: spam = spam folder; safe = ham folders (hard_ham and easy_ham_2).
+Important limitation: this is an older corpus (early 2000s), so it does not represent modern phishing, QR-code scams, current brands, or current fraud tactics. Do not treat a SAFE result as proof an email is safe. Use as a training baseline and evaluate on newer, separate examples before real-world use.

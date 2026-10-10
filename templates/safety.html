@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Cyber Safety Guide — SpamShield AI{% endblock %}
+{% block content %}
+<section class="page-intro split-intro reveal"><div><span class="eyebrow"><span class="eyebrow-dot"></span> LEARN · RECOGNISE · PROTECT</span><h1>Make smarter moves<br><span class="gradient-text">in a digital world.</span></h1><p>Scams often rely on pressure, trust or curiosity. Learn the patterns so you can pause and verify.</p></div><div class="intro-art safety-art"><div class="person-orb">✦</div><div class="floating-shield">✓</div><span class="leaf leaf-a"></span><span class="leaf leaf-b"></span></div></section>
+<section class="section-block reveal"><div class="section-heading"><div><span class="eyebrow">COMMON WARNING SIGNS</span><h2>Know the patterns scammers use.</h2></div><p>One signal does not prove a scam. Several warning signs together mean you should verify carefully.</p></div>
+<div class="safety-grid">
+<article class="safety-card"><span class="service-icon lilac">✉</span><h3>Phishing emails</h3><p>Messages imitate trusted organisations and ask you to sign in, verify details or open a link.</p><div class="warning-example"><strong>Watch for</strong><span>Unexpected account warnings or mismatched sender addresses.</span></div></article>
+<article class="safety-card"><span class="service-icon blue">↗</span><h3>Suspicious links</h3><p>Links can lead to lookalike websites designed to collect your login or payment information.</p><div class="warning-example"><strong>Watch for</strong><span>Misspelled domains, shortened URLs and unusual requests.</span></div></article>
+<article class="safety-card"><span class="service-icon peach">🎁</span><h3>Fake rewards</h3><p>Unexpected prizes or jobs may require an upfront payment or sensitive information.</p><div class="warning-example"><strong>Watch for</strong><span>Fees to release a prize, job offer or refund.</span></div></article>
+<article class="safety-card"><span class="service-icon mint">⌁</span><h3>Urgent payment requests</h3><p>Scammers create panic to stop you from checking with the real person or organisation.</p><div class="warning-example"><strong>Watch for</strong><span>Pressure to transfer money immediately or keep it secret.</span></div></article>
+<article class="safety-card"><span class="service-icon rose">♙</span><h3>Credential theft</h3><p>Fraudsters may ask for passwords, OTPs, PINs or remote access to your device.</p><div class="warning-example"><strong>Watch for</strong><span>Requests for authentication codes or banking PINs.</span></div></article>
+<article class="safety-card"><span class="service-icon gold">◎</span><h3>Social media scams</h3><p>Fake profiles, impersonation and too-good-to-be-true offers can target your trust.</p><div class="warning-example"><strong>Watch for</strong><span>New accounts asking for money or private details.</span></div></article>
+</div></section>
+<section class="section-block reveal"><div class="section-heading"><div><span class="eyebrow">YOUR EVERYDAY CHECKLIST</span><h2>Pause. Check. Protect.</h2></div></div><div class="rules-grid">
+<div class="rule-item"><span>01</span><div><h3>Think before you click</h3><p>Open the official website or app directly instead of following an unexpected link.</p></div></div>
+<div class="rule-item"><span>02</span><div><h3>Verify the sender</h3><p>Contact the organisation or person using a trusted number or channel you already know.</p></div></div>
+<div class="rule-item"><span>03</span><div><h3>Keep codes private</h3><p>Never share passwords, OTPs, PINs or recovery codes with someone who contacts you.</p></div></div>
+<div class="rule-item"><span>04</span><div><h3>Secure your accounts</h3><p>Use unique passwords, multi-factor authentication and current device updates.</p></div></div>
+</div></section>
+<section class="cta-strip reveal"><div><span class="eyebrow">NEED ANOTHER STEP?</span><h2>Check a suspicious message.</h2><p>Use the scanner as one signal, then verify anything important independently.</p></div><a class="btn btn-primary" href="{{ url_for('scanner') }}">Open email scanner ↗</a></section>
+{% endblock %}
